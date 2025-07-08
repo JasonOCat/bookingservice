@@ -5,13 +5,23 @@ spring:
     url: jdbc:mysql://localhost:3306/ticketing
     username: root
     password: password
-
   jpa:
     hibernate:
       ddl-auto: none
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    template:
+      default-topic: booking
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
 
 inventory:
   service:
     url: http://localhost:8080/api/v1/inventory
 server:
   port: 8081
+
+

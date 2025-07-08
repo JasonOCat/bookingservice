@@ -2,12 +2,13 @@ package com.jason.bookingservice.response;
 
 import lombok.Builder;
 
+import java.math.BigDecimal;
+
 @Builder
 public record BookingResponse(
-    Long bookingId,
     Long userid,
     Long eventId,
     Long ticketCount,
-    String ticketPrice
+    BigDecimal totalPrice
 ) {
 }
