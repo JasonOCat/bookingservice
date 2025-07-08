@@ -8,7 +8,7 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class InventoryServiceClient {
 
-    @Value("${inventory.service.url")
+    @Value("${inventory.service.url}")
     private String inventoryServiceUrl;
 
     public InventoryResponse getInventory(final Long eventId) {
